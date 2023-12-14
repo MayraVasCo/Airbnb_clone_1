@@ -12,7 +12,7 @@ class BaseModel:
 
     def __str__(self):
         # Return a string representation of the object
-        class_name = self.__class__.__name  # Get the class name
+        class_name = self.__class__.__name__()  # Corrected to add parentheses
         return f"[{class_name}] ({self.id}) {self.__dict__}"
 
     def save(self):
@@ -28,6 +28,6 @@ class BaseModel:
         instance_dict['updated_at'] = self.updated_at.isoformat()
 
         # Add a key '__class__' to the dictionary with the class name of the object
-        instance_dict['__class__'] = self.__class__.__name
+        instance_dict['__class__'] = self.__class__.__name__
 
         return instance_dict
