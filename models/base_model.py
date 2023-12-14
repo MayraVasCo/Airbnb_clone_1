@@ -12,7 +12,7 @@ class BaseModel:
 
     def __str__(self):
         # Return a string representation of the object
-        class_name = self.__class__.__name__()  # Corrected to add parentheses
+        class_name = self.__class__.__name__
         return f"[{class_name}] ({self.id}) {self.__dict__}"
 
     def save(self):
