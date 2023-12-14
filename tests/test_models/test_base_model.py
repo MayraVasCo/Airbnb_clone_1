@@ -1,14 +1,29 @@
-#!/usr/bin/python3
-from models.base_model import BaseModel
+# test_base_model.py
 
-my_model = BaseModel()
-my_model.name = "My First Model"
-my_model.my_number = 89
-print(my_model)
-my_model.save()
-print(my_model)
-my_model_json = my_model.to_dict()
-print(my_model_json)
-print("JSON of my_model:")
-for key in my_model_json.keys():
-    print("\t{}: ({}) - {}".format(key, type(my_model_json[key]), my_model_json[key]))
+import unittest
+from mymodule import BaseModel  # Asegúrate de importar tu clase BaseModel desde tu módulo
+
+class BaseModelTestCase(unittest.TestCase):
+    def test_constructor(self):
+        # Agrega pruebas para el constructor de BaseModel
+        # Por ejemplo, verifica que los atributos se inicialicen correctamente
+        pass
+
+    def test_save(self):
+        # Agrega pruebas para el método save
+        # Por ejemplo, verifica que updated_at se actualice después de llamar a save
+        pass
+
+    def test_to_dict(self):
+        # Agrega pruebas para el método to_dict
+        # Por ejemplo, verifica que el diccionario devuelto tenga las claves y valores correctos
+        pass
+    
+    def test_init_(self):
+        pass
+
+    def test_str_(self):
+        pass
+
+if __name__ == '__main__':
+    unittest.main()
