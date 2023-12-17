@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import uuid
+import models
 from datetime import datetime
 
 class BaseModel:
@@ -18,6 +19,7 @@ class BaseModel:
             self.id = str(uuid.uuid4())  # Generate a unique identifier
             self.created_at = datetime.now()  # Set the creation time
             self.updated_at = datetime.now()  # Set the update time
+            models.storage.new(self)
 
     def __str__(self):
         # Return a string representation of the object
@@ -27,6 +29,7 @@ class BaseModel:
     def save(self):
         # Update the 'updated_at' attribute with the current datetime
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         # Return a dictionary containing all keys/values of __dict__ of the instance
