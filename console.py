@@ -1,10 +1,8 @@
 import cmd
 
 class HBNBCommand(cmd.Cmd):
-    """
-    Clase que define un intérprete de comandos para una aplicación hbnb.
-    """
-
+    """Clase que define un intérprete de comandos para una aplicación hbnb."""
+    # Resto del código del módulo
     prompt = "(hbnb) "
 
     def do_quit(self, arg):
